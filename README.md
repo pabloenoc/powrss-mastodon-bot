@@ -1,6 +1,6 @@
 # Mastodon Bot
 
-This is the source for for the powRSS Mastodon account.
+This is the source for the powRSS Mastodon account.
 
 It automates the process of fetching blog posts from the [powRSS](https://powrss.com) database and sharing these to Mastodon.
 
@@ -43,7 +43,7 @@ Per the Dokku [documentation](https://dokku.com/docs/processes/scheduled-cron-ta
 
 > Dokku automates scheduled `dokku run` commands via its `app.json` cron integration.
 
-For the sake of simplicity, the current task executes `index.php`.
+For the sake of simplicity, the current task executes `index.php` every 8 hours.
 
 ```
 {
