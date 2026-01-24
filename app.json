@@ -1,0 +1,8 @@
+{
+  "cron": [
+    {
+      "command": "php index.php",
+      "schedule": "0 */8 * * *"
+    }
+  ]
+}
