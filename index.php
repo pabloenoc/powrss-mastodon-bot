@@ -56,6 +56,8 @@ $status_text = <<<TEXT
 $greeting
 
 $final_url
+
+#blogs #blogging #indieweb
 TEXT;
 
 $post_data = [
