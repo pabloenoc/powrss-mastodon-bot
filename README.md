@@ -41,7 +41,7 @@ $ dokku config:set [app-name] MASTODON_ACCESS_TOKEN="[access token]"
 
 Per the Dokku [documentation](https://dokku.com/docs/processes/scheduled-cron-tasks/):
 
-> Dokku automates scheduled `dokku run` commands via it's `app.json` cron integration.
+> Dokku automates scheduled `dokku run` commands via its `app.json` cron integration.
 
 For the sake of simplicity, the current task executes `index.php`.
 
