@@ -1,0 +1,13 @@
+{
+    "name": "enocc/mastodon-bot",
+    "description": "A Mastodon bot for the powRSS account",
+    "type": "project",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Pablo Enoc",
+            "email": "pablo@enocc.com"
+        }
+    ],
+    "require": {}
+}
