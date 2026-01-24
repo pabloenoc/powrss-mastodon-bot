@@ -9,5 +9,7 @@
             "email": "pablo@enocc.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": "^8.0"
+    }
 }
