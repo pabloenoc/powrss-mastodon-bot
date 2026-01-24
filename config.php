@@ -1,0 +1,4 @@
+<?php
+
+define('MASTODON_INSTANCE', getenv('MASTODON_INSTANCE'));
+define('MASTODON_ACCESS_TOKEN', getenv('MASTODON_ACCESS_TOKEN'));
