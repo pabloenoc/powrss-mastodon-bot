@@ -35,10 +35,25 @@ echo "Final URL: " . $final_url . "\n";
 
 // Mastodon
 
-$mastodon_instance = 'https://mastodon.social';
+$greetings = [
+    'Found in #powRSS today:',
+    'A blog post from #powRSS:',
+    'Saw this post on #powRSS after clicking Random...',
+    'Pulled from the #powRSS stream:',
+    'Spotted on #powRSS:',
+    "From today's #powRSS wanderings:",
+    'Discovered via #powRSS:',
+    'Another find from #powRSS:',
+    'Unearthed on #powRSS:',
+    'Random click, courtesy of #powRSS:',
+    'Crossed my path on #powRSS:',
+];
+
+$greeting = $greetings[array_rand($greetings)];
+
 
 $status_text = <<<TEXT
-Found in #powRSS today:
+$greeting
 
 $final_url
 TEXT;
