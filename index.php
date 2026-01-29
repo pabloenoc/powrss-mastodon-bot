@@ -82,7 +82,7 @@ $mastodon_response = curl_exec($curl);
 $mastodon_status_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
 echo "Mastodon Response Status Code: " . $mastodon_status_code . "\n";
-echo "Mastodon Resposne: " . $mastodon_response . "\n";
+echo "Mastodon Response: " . $mastodon_response . "\n";
 
 curl_close($curl);
 
