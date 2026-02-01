@@ -38,15 +38,13 @@ echo "Final URL: " . $final_url . "\n";
 $greetings = [
     'Found in #powRSS today:',
     'A blog post from #powRSS:',
-    'Saw this post on #powRSS after clicking Random...',
+    'A post on #powRSS after clicking Random...',
     'Pulled from the #powRSS stream:',
     'Spotted on #powRSS:',
-    "From today's #powRSS wanderings:",
+    "Today's #powRSS discovery:",
     'Discovered via #powRSS:',
     'Another find from #powRSS:',
-    'Unearthed on #powRSS:',
-    'Random click, courtesy of #powRSS:',
-    'Crossed my path on #powRSS:',
+    'Random click, courtesy of #powRSS:'
 ];
 
 $greeting = $greetings[array_rand($greetings)];
