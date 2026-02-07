@@ -11,26 +11,30 @@ curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($curl, CURLOPT_NOBODY, true);
 
+echo "[" . date('Y-m-d H:i:s T') . "] Fetching URL from powrss.com/random\n";
+
 $response = curl_exec($curl);
 $http_status_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
 echo 'Response Status Code: ' . $http_status_code . PHP_EOL;
 
-if ($http_status_code === 404) {
-    echo "Error: 404 received from powrss.com";
+if ($http_status_code >= 400) {
+    echo "[" . date('Y-m-d H:i:s T') . "] ERROR: HTTP error " . $http_status_code . " received from powrss.com\n";
+    curl_close($curl);
     exit(1);
 }
 
 if (!$response) {
-    echo 'There was an error with this request\n';
+    echo "[" . date('Y-m-d H:i:s T') . "] ERROR: Empty response from powrss.com\n";
+    curl_close($curl);
     exit(1);
 }
 
 
-$final_url = curl_getinfo($curl, CURLINFO_EFFECTIVE_URL);
-
+$effective_url = curl_getinfo($curl, CURLINFO_EFFECTIVE_URL);
 curl_close($curl);
-echo "Final URL: " . $final_url . "\n";
+
+echo "[" . date('Y-m-d H:i:s T') . "] Effective URL: " . $effective_url . "\n";
 
 
 // Mastodon
