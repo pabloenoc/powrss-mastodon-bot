@@ -68,7 +68,7 @@ $post_data = [
     'visibility' => 'public'
 ];
 
-$status_headers = [
+$http_header = [
     'Authorization: Bearer ' . MASTODON_ACCESS_TOKEN,
     'Content-Type: application/x-www-form-urlencoded'
 ];
