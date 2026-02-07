@@ -57,7 +57,7 @@ $greeting = $greetings[array_rand($greetings)];
 $status_text = <<<TEXT
 $greeting
 
-$final_url
+$effective_url
 
 #blogs #blogging #indieweb
 TEXT;
