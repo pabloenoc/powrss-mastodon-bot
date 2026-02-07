@@ -78,15 +78,25 @@ curl_setopt($curl, CURLOPT_URL, MASTODON_INSTANCE . "/api/v1/statuses");
 curl_setopt($curl, CURLOPT_POST, true);
 curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($post_data));
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($curl, CURLOPT_HTTPHEADER, $status_headers);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $http_header);
 
 $mastodon_response = curl_exec($curl);
 $mastodon_status_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
-echo "Mastodon Response Status Code: " . $mastodon_status_code . "\n";
-echo "Mastodon Response: " . $mastodon_response . "\n";
+echo "[" . date('Y-m-d H:i:s T') . "] Mastodon Response Status Code: " . $mastodon_status_code . "\n";
 
+if ($mastodon_status_code >= 400) {
+    echo "[" . date('Y-m-d H:i:s T') . "] ERROR: Mastodon API error " . $mastodon_status_code . "\n";
+    echo "[" . date('Y-m-d H:i:s T') . "] Mastodon Response: " . $mastodon_response . "\n";
+    curl_close($curl);
+    exit(1);
+}
+
+echo "[" . date('Y-m-d H:i:s T') . "] SUCCESS: Mastodon Response: " . $mastodon_response . "\n";
 curl_close($curl);
+
+echo "[" . date('Y-m-d H:i:s T') . "] Mastodon Bot script complete.\n";
+exit(0);
 
 
 
