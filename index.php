@@ -2,6 +2,8 @@
 
 require_once 'config.php';
 
+echo "[" . date('Y-m-d H:i:s T') . "] Mastodon Bot Script Process Initializing...\n";
+
 $curl = curl_init();
 $url = "https://powrss.com/random";
 
