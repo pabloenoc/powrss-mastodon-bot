@@ -22,19 +22,16 @@ echo 'Response Status Code: ' . $http_status_code . PHP_EOL;
 
 if ($http_status_code >= 400) {
     echo "[" . date('Y-m-d H:i:s T') . "] ERROR: HTTP error " . $http_status_code . " received from powrss.com\n";
-    curl_close($curl);
     exit(1);
 }
 
 if (!$response) {
     echo "[" . date('Y-m-d H:i:s T') . "] ERROR: Empty response from powrss.com\n";
-    curl_close($curl);
     exit(1);
 }
 
 
 $effective_url = curl_getinfo($curl, CURLINFO_EFFECTIVE_URL);
-curl_close($curl);
 
 echo "[" . date('Y-m-d H:i:s T') . "] Effective URL: " . $effective_url . "\n";
 
@@ -90,13 +87,10 @@ echo "[" . date('Y-m-d H:i:s T') . "] Mastodon Response Status Code: " . $mastod
 if ($mastodon_status_code >= 400) {
     echo "[" . date('Y-m-d H:i:s T') . "] ERROR: Mastodon API error " . $mastodon_status_code . "\n";
     echo "[" . date('Y-m-d H:i:s T') . "] Mastodon Response: " . $mastodon_response . "\n";
-    curl_close($curl);
     exit(1);
 }
 
 echo "[" . date('Y-m-d H:i:s T') . "] SUCCESS: Mastodon Response: " . $mastodon_response . "\n";
-curl_close($curl);
-
 echo "[" . date('Y-m-d H:i:s T') . "] Mastodon Bot script complete.\n";
 exit(0);
 
