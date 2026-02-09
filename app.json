@@ -2,7 +2,7 @@
   "cron": [
     {
       "command": "php index.php",
-      "schedule": "0 3,11,19 * * *"
+      "schedule": "0 3 * * *"
     }
   ]
 }
