@@ -58,7 +58,7 @@ $greeting
 
 $effective_url
 
-#blogs #blogging #indieweb
+#blogs #blogging #discovery
 TEXT;
 
 $post_data = [
