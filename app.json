@@ -1,7 +1,7 @@
 {
   "cron": [
     {
-      "command": "php index.php >> /var/log/mastodon-bot/cron.log 2>&1",
+      "command": "sh -c 'php index.php >> /var/log/mastodon-bot/cron.log 2>&1'",
       "schedule": "0 3 * * *"
     }
   ]
